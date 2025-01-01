@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Arima:wght@100..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --White-Gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --Pink-Gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body{
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#landingPageHeader{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    padding-left: 20px;
+}
+
+#landingPageHeader svg{
+    transform: scale(0.8);
+}
+
+#imageContainer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imageContainer img{
+    width: 100%;
+    height: fit-content;
+    max-width: 500px;
+    align-self: center;
+}
+
+#descriptionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-top: 60px;
+    width: 500px;
+}
+
+#descriptionContainer p:first-child{
+    text-align: center;
+    align-self: center;
+    letter-spacing: 11px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 43px;
+    color: var(--Dark-Grayish-Red);
+    width: 300px;
+}
+
+#descriptionContainer p:first-child span{
+    font-weight: 300;
+    color: var(--Desaturated-Red);
+}
+
+#descriptionContainer p:nth-child(2){
+    font-size: 16px;
+    width: 340px;
+    line-height: 22px;
+    text-align: center;
+    align-self: center;
+    margin-top: 20px;
+    color: var(--Desaturated-Red)
+}
+
+#inputContainer{
+/*     background-color: red; */
+    align-self: center;
+    width: 340px;
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#inputContainer input{
+    width: 80%;
+    height: 48px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 1px solid var(--Desaturated-Red);
+    padding: 0 20px;
+    font-size: 0.95rem;
+}
+
+#inputContainer input::placeholder{
+    color: var(--Desaturated-Red);
+}
+
+#inputContainer button{
+    position: relative;
+    right: 20px;
+    width: 68px;
+    height: 50px;
+    background: var(--Pink-Gradient);
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    transition: all 150ms ease-in-out;
+}
+
+#inputContainer button:hover{
+    box-shadow: 3px 3px 15px hsla(0, 0%, 0%, 0.51);
+    cursor: pointer;
+    border: none;
+}
+
+#inputContainer button:active{
+    background-color: var(--White-Gradient);
+    color: black;
+}
+
+
+#backgroundDesign{
+    display: none;
+}
+
+#errorIcon{
+    position: absolute;
+    right: 110%;
+    top: 28%;
+    display: none;
+}
+
+#inputActiveStateDisplay{
+    font-size: 0.8rem;
+    color: red;
+    visibility: hidden;
+    width: 300px;
+    align-self: center;
+}
+
+@media(min-width: 1440px){
+    #descriptionContainer{
+        grid-area: description;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+        background-color: white;
+        box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.3);
+        box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    #descriptionContainer p:first-child{
+        align-self: flex-start;
+        margin-left: 15%;
+        text-align: start;
+        font-size: 2.8rem;
+        line-height: 50px;
+    }
+
+    #descriptionContainer p:nth-child(2){
+        align-self: flex-start;
+        margin-left: 15%;
+        text-align: start;
+        min-width: 500px;
+        width: auto;
+    }
+
+    #inputContainer{
+        align-self: flex-start;
+        margin-left: 15%;
+        max-width: 430px;
+        width: max-content;
+        min-width: 550px;
+    }
+
+    #inputContainer button{
+        width: 100px;
+    }
+
+}
+
+@media (max-width: 400px){
+
+    #descriptionContainer{
+        width: auto;
+    }
+
+    #descriptionContainer p:nth-child(2){
+        width: 280px;
+    }
+
+    #inputContainer{
+        width: 280px;
+    }
+
+    #inputActiveStateDisplay{
+        font-size: 0.8rem;
+        color: red;
+        visibility: hidden;
+        width: 250px;
+    }
+}
+
+@media (min-width: 1200px){
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 120px 100px;
+    }
+
+    #sectionContainer{
+        display: grid;
+        width: 100%;
+        height: 656px;
+        grid-template-columns: 1fr 500px;
+        grid-template-rows: 15% 85%;
+        grid-template-areas: 
+        "header image"
+        "description image";
+        box-shadow: 4px 4px 100px rgba(0, 0, 0, 0.35);
+        background-color: red;
+    }
+
+    #landingPageHeader{
+        grid-area: header;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 5px 5px 5px black;
+        padding-top: 50px;
+    }
+
+    #landingPageHeader svg{
+        margin-left: 15%;
+    }
+
+    #descriptionContainer{
+        grid-area: description;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+        background-color: white;
+        box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.3);
+        box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    #descriptionContainer p:first-child{
+        align-self: flex-start;
+        margin-left: 15%;
+        text-align: start;
+        font-size: 2.8rem;
+        line-height: 50px;
+    }
+
+    #descriptionContainer p:nth-child(2){
+        align-self: flex-start;
+        margin-left: 15%;
+        text-align: start;
+        max-width: 400px;
+        width: auto;
+    }
+
+    #inputContainer{
+        align-self: flex-start;
+        margin-left: 15%;
+        max-width: 430px;
+        width: max-content;
+        min-width: 400px;
+        margin-bottom: 10px;
+    }
+
+    #inputContainer button{
+        width: 100px;
+    }
+
+    #imageContainer{
+        grid-area: image;
+        background-color: black;
+        height: 100%;
+        width: max-content;
+        min-width: 325px;
+    }
+
+    #imageContainer img{
+        width: 100%;
+        height: 100%;
+    }
+
+    #backgroundDesign{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    #inputActiveStateDisplay{
+        margin-left: 17%;
+        font-size: 0.8rem;
+        color: red;
+        visibility: hidden;
+        align-self: flex-start;
+    }
+    
+}
+
+
+/* FOOTER CREDITS */
+footer{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 300px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
