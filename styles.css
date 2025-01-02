@@ -1,356 +1,696 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Arima:wght@100..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-
 :root{
-    --Desaturated-Red: hsl(0, 36%, 70%);
-    --Soft-Red: hsl(0, 93%, 68%);
-    --Dark-Grayish-Red: hsl(0, 6%, 24%);
-    --White-Gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    --Pink-Gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    --Purple-100: hsl(254, 88%, 90%);
+    --Purple-500: hsl(256, 67%, 59%);
+    --Yellow-100: hsl(31, 66%, 93%);
+    --Yellow-500: hsl(39, 100%, 71%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+@font-face{
+    font-family: 'DM Sans';
+    src: url(assets/fonts/DMSans-VariableFont_opsz\,wght.ttf) format('truetype');
+}
+
+@font-face{
+    font-family: 'DM Sans Italic';
+    src: url(assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf) format('truetype');
 }
 
 *{
-    box-sizing: border-box;
-    margin: 0;
+    font-family: 'DM Sans';
     padding: 0;
-    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body{
-    font-size: 16px;
-    position: relative;
-    height: 100vh;
-    min-height: 900px;
+    height: auto;
+    padding: 50px 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+section{
+    height: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.2fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: 
+    "scheduleQuickerBox mediaAiBox mediaAiBox createScheduleBox"
+    "scheduleQuickerBox manageMultipleBox maintainScheduleBox createScheduleBox"
+    "writeUsingAiBox manageMultipleBox maintainScheduleBox createScheduleBox"
+    "writeUsingAiBox fasterGrowthBox growFollowersBox growFollowersBox";
+    gap: 25px;
+}
+
+#scheduleQuickerBox{
+    grid-area: scheduleQuickerBox;
+    background-color: var(--Yellow-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#scheduleQuickerBox p{
+    font-size: 2.7rem;
+    width: 210px;
+    line-height: 42px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+#scheduleQuickerBox img{
+    width: 210px;
+}
+
+#scheduleQuickerBox p span{
+    font-family: 'DM Sans Italic';
+    color: var(--Purple-500)
+}
+
+#mediaAiBox{
+    grid-area: mediaAiBox;
+    background-color: var(--Purple-500);
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#landingPageHeader{
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
+    justify-content: center;
     padding: 20px;
-    padding-left: 20px;
 }
 
-#landingPageHeader svg{
-    transform: scale(0.8);
+#mediaAiBox p:first-of-type{
+    font-size: 4rem;
+    color: white;
+    line-height: 65px;
+    text-align: center;
+    font-weight: 500;
 }
 
-#imageContainer{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#mediaAiBox span:first-of-type{
+    color: var(--Yellow-500);
 }
 
-#imageContainer img{
-    width: 100%;
-    height: fit-content;
-    max-width: 500px;
-    align-self: center;
+#mediaAiBox span:nth-of-type(2){
+    font-family: 'DM Sans Italic';
 }
 
-#descriptionContainer{
+#mediaAiBox img{
+    width: 200px;
+    height: auto;
+    margin-top: 20px
+}
+
+#mediaAiBox p:nth-of-type(2){
+    color: white;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#createScheduleBox{
+    grid-area: createScheduleBox;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    padding-top: 60px;
-    width: 500px;
+    align-items: center;
+    padding: 40px 40px;
+    background-color: var(--Purple-100);
+    overflow: hidden;
 }
 
-#descriptionContainer p:first-child{
-    text-align: center;
-    align-self: center;
-    letter-spacing: 11px;
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 43px;
-    color: var(--Dark-Grayish-Red);
-    width: 300px;
+#createScheduleBox p:first-of-type{
+    font-size: 2.1rem;
+    line-height: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-#descriptionContainer p:first-child span{
-    font-weight: 300;
-    color: var(--Desaturated-Red);
+#createScheduleBox img{
+    position: relative;
+    left: 90px;
+    height: 350px;
+    width: auto;
 }
 
-#descriptionContainer p:nth-child(2){
-    font-size: 16px;
-    width: 340px;
-    line-height: 22px;
-    text-align: center;
-    align-self: center;
+#createScheduleBox p:nth-of-type(2){
     margin-top: 20px;
-    color: var(--Desaturated-Red)
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-#inputContainer{
-/*     background-color: red; */
-    align-self: center;
-    width: 340px;
-    height: 50px;
-    margin-top: 30px;
+#manageMultipleBox{
+    grid-area: manageMultipleBox;
+    background-color: white;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#manageMultipleBox img{
+    width: 360px;
+    height: auto;
+}
+
+#manageMultipleBox p{
+    margin-top: 10px;
+    font-size: 2.1rem;
+    line-height: 35px;
+    font-weight: 500;
+}
+
+#maintainScheduleBox{
+    grid-area: maintainScheduleBox;
+    background-color: var(--Yellow-500);
+    padding: 25px;
+    overflow: hidden;
+}
+
+#maintainScheduleBox p{
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+#maintainScheduleBox img{
+    width: 240px;
+    height: auto;
+}
+
+#writeUsingAiBox{
+    grid-area: writeUsingAiBox;
+    background-color: var(--Yellow-500);
+    padding: 25px;
+    font-weight: 500;
+    line-height: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#writeUsingAiBox p{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+#writeUsingAiBox img{
+    width: 230px;
+    height: auto;
+}
+
+#fasterGrowthBox{
+    grid-area: fasterGrowthBox;
+    background-color: white;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#fasterGrowthBox span{
+    font-size: 4rem;
+}
+
+#fasterGrowthBox p{
+    align-self: flex-start;
+    font-size: 1.2rem
+}
+
+#fasterGrowthBox img{
+    width: 200px;
+    height: auto;
+}
+
+#growFollowersBox{
+    grid-area: growFollowersBox;
+    background-color: var(--Purple-500);
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 20px;
 }
 
-#inputContainer input{
-    width: 80%;
-    height: 48px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border: 1px solid var(--Desaturated-Red);
-    padding: 0 20px;
-    font-size: 0.95rem;
+#growFollowersBox img{
+    height: 210px;
 }
 
-#inputContainer input::placeholder{
-    color: var(--Desaturated-Red);
+#growFollowersBox p{
+    color: white;
+    font-size: 2.5rem;
+    line-height: 40px;
+    font-weight: 500;
+    margin-left: 15px;
 }
 
-#inputContainer button{
-    position: relative;
-    right: 20px;
-    width: 68px;
-    height: 50px;
-    background: var(--Pink-Gradient);
-    text-align: center;
-    border-radius: 25px;
-    border: none;
-    transition: all 150ms ease-in-out;
+.contentBox{
+    background-color: red;
+    border-radius: 10px;
 }
 
-#inputContainer button:hover{
-    box-shadow: 3px 3px 15px hsla(0, 0%, 0%, 0.51);
-    cursor: pointer;
-    border: none;
-}
-
-#inputContainer button:active{
-    background-color: var(--White-Gradient);
-    color: black;
-}
-
-
-#backgroundDesign{
-    display: none;
-}
-
-#errorIcon{
-    position: absolute;
-    right: 110%;
-    top: 28%;
-    display: none;
-}
-
-#inputActiveStateDisplay{
-    font-size: 0.8rem;
-    color: red;
-    visibility: hidden;
-    width: 300px;
-    align-self: center;
-}
-
-@media(min-width: 1440px){
-    #descriptionContainer{
-        grid-area: description;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 50px;
-        background-color: white;
-        box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.3);
-        box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.3);
-    }
-
-    #descriptionContainer p:first-child{
-        align-self: flex-start;
-        margin-left: 15%;
-        text-align: start;
-        font-size: 2.8rem;
-        line-height: 50px;
-    }
-
-    #descriptionContainer p:nth-child(2){
-        align-self: flex-start;
-        margin-left: 15%;
-        text-align: start;
-        min-width: 500px;
-        width: auto;
-    }
-
-    #inputContainer{
-        align-self: flex-start;
-        margin-left: 15%;
-        max-width: 430px;
-        width: max-content;
-        min-width: 550px;
-    }
-
-    #inputContainer button{
-        width: 100px;
+@media(min-width: 1300px){
+    section{
+        max-height: 900px;
     }
 
 }
 
-@media (max-width: 465px){
-
-    #descriptionContainer{
-        width: auto;
-    }
-
-    #descriptionContainer p:nth-child(2){
-        width: 280px;
-    }
-
-    #inputContainer{
-        width: 280px;
-    }
-
-    #inputActiveStateDisplay{
-        font-size: 0.8rem;
-        color: red;
-        visibility: hidden;
-        width: 250px;
-    }
-}
-
-@media (min-width: 1200px){
+@media(min-width: 1101px) and (max-width: 1300px){
 
     body{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        padding: 120px 100px;
+        height: auto;
     }
 
-    #sectionContainer{
+    section{
+        max-width: 1200px;
+        height: fit-content;
         display: grid;
-        width: 100%;
-        height: 656px;
-        grid-template-columns: 1fr 500px;
-        grid-template-rows: 15% 85%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
         grid-template-areas: 
-        "header image"
-        "description image";
-        box-shadow: 4px 4px 100px rgba(0, 0, 0, 0.35);
-        background-color: red;
-    }
-
-    #landingPageHeader{
-        grid-area: header;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        box-shadow: 5px 5px 5px black;
-        padding-top: 50px;
-    }
-
-    #landingPageHeader svg{
-        margin-left: 15%;
-    }
-
-    #descriptionContainer{
-        grid-area: description;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        padding-bottom: 50px;
-        background-color: white;
-        box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.3);
-        box-shadow: -4px 0 8px -2px rgba(0, 0, 0, 0.3);
-    }
-
-    #descriptionContainer p:first-child{
-        align-self: flex-start;
-        margin-left: 15%;
-        text-align: start;
-        font-size: 2.8rem;
-        line-height: 50px;
-    }
-
-    #descriptionContainer p:nth-child(2){
-        align-self: flex-start;
-        margin-left: 15%;
-        text-align: start;
-        max-width: 400px;
-        width: auto;
-    }
-
-    #inputContainer{
-        align-self: flex-start;
-        margin-left: 15%;
-        max-width: 430px;
-        width: max-content;
-        min-width: 400px;
-        margin-bottom: 10px;
-    }
-
-    #inputContainer button{
-        width: 100px;
-    }
-
-    #imageContainer{
-        grid-area: image;
-        background-color: black;
-        height: 100%;
-        width: max-content;
-        min-width: 325px;
-    }
-
-    #imageContainer img{
-        width: 100%;
-        height: 100%;
-    }
-
-    #backgroundDesign{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    #inputActiveStateDisplay{
-        margin-left: 17%;
-        font-size: 0.8rem;
-        color: red;
-        visibility: hidden;
-        align-self: flex-start;
+        "mediaAiBox mediaAiBox createScheduleBox"
+        "manageMultipleBox maintainScheduleBox createScheduleBox"
+        "fasterGrowthBox growFollowersBox growFollowersBox"
+        "scheduleQuickerBox writeUsingAiBox writeUsingAiBox";
+        gap: 25px;
     }
     
+    #createScheduleBox img{
+        left: 110px;
+        height: 430px;
+    }
+    
+    #createScheduleBox p:nth-of-type(2){
+        font-size: 1.3rem;
+    }
+    
+    #manageMultipleBox img{
+        width: 420px;
+    }
+    
+    #manageMultipleBox p{
+        margin-top: 20px;
+        font-size: 2.6rem;
+    }
+
+    #maintainScheduleBox{
+        grid-area: maintainScheduleBox;
+        background-color: var(--Yellow-500);
+        padding: 25px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #maintainScheduleBox p{
+        font-weight: 500;
+        height: auto;
+        font-size: 2.3rem;
+        line-height: 35px;
+        margin-bottom: -55px;
+    }
+    
+    #maintainScheduleBox img{
+        position: relative;
+        top: 100px;
+        width: 240px;
+        height: auto;
+    }
+
+    #fasterGrowthBox{
+        grid-area: fasterGrowthBox;
+        background-color: white;
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #fasterGrowthBox span{
+        font-size: 5rem;
+    }
+    
+    #fasterGrowthBox p{
+        align-self: flex-start;
+        font-size: 1.5rem
+    }
+    
+    #fasterGrowthBox img{
+        width: 250px;
+        height: auto;
+    }
+
+    #writeUsingAiBox{
+        grid-area: writeUsingAiBox;
+        background-color: var(--Yellow-500);
+        padding: 15px;
+        font-weight: 500;
+        line-height: 35px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+    #writeUsingAiBox p{
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        margin-left: 20px;
+    }
+    
+    #writeUsingAiBox img{
+        width: 270px;
+        height: auto;
+    }
+
+    .contentBox{
+        width: auto;
+    }
 }
 
+@media(min-width: 641px) and (max-width: 1100px){
 
-/* FOOTER CREDITS */
-footer{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 300px;
-    transform: translateX(-50%);
-    margin-top: 10px;
-}
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-}
-.attribution a { color: hsl(228, 45%, 44%); }
+    body{
+        height: auto;
+    }
 
+    section{
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "mediaAiBox mediaAiBox"
+        "manageMultipleBox maintainScheduleBox"
+        "createScheduleBox createScheduleBox"
+        "growFollowersBox fasterGrowthBox"
+        "scheduleQuickerBox writeUsingAiBox";
+        gap: 25px;
+    }
+
+    #mediaAiBox,
+    #createScheduleBox{
+        min-width: 625px;
+        max-width: 825px;
+    }
+
+    #manageMultipleBox,
+    #maintainScheduleBox,
+    #growFollowersBox,
+    #fasterGrowthBox,
+    #scheduleQuickerBox,
+    #writeUsingAiBox{
+        min-width: 300px;
+        max-width: 400px;
+    }
+
+
+    #createScheduleBox{
+        grid-area: createScheduleBox;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 30px;
+        background-color: var(--Purple-100);
+        overflow: hidden;
+        gap: 30px;
+        position: relative;
+    }
+    
+    #createScheduleBox p:first-of-type{
+        font-size: 2.5rem;
+        line-height: 37px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        max-width: 250px;
+        align-self: start;
+        min-width: 230px;
+    }
+    
+    #createScheduleBox img{
+        position: absolute;
+        height: 170px;
+        left: 40px;
+        top: 120px;
+        width: auto;
+    }
+    
+    #createScheduleBox p:nth-of-type(2){
+        margin-top: 20px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        min-width: 240px;
+        max-width: 350px;
+    }
+
+    #writeUsingAiBox{
+        grid-area: writeUsingAiBox;
+        background-color: var(--Yellow-500);
+        padding: 15px;
+        font-weight: 500;
+        line-height: 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #writeUsingAiBox p{
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+    
+    #writeUsingAiBox img{
+        width: 200px;
+        height: auto;
+    }
+
+    #growFollowersBox{
+        grid-area: growFollowersBox;
+        background-color: var(--Purple-500);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    
+    #growFollowersBox img{
+        height: 170px;
+    }
+    
+    #growFollowersBox p{
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .contentBox{
+        height: auto;
+        border-radius: 10px;
+        min-height: 335px;
+    }
+
+}
+
+@media(max-width: 640px){
+
+    body{
+        padding: 10px;
+        height: auto;
+    }
+
+    section{
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "mediaAiBox"
+        "manageMultipleBox"
+        "maintainScheduleBox"
+        "createScheduleBox"
+        "growFollowersBox"
+        "fasterGrowthBox"
+        "scheduleQuickerBox"
+        "writeUsingAiBox";
+        gap: 25px;
+    }
+
+    #mediaAiBox,
+    #manageMultipleBox,
+    #maintainScheduleBox,
+    #createScheduleBox,
+    #growFollowersBox,
+    #fasterGrowthBox,
+    #scheduleQuickerBox,
+    #writeUsingAiBox{
+        max-width: 650px;
+        min-width: 290px;
+        max-height: 600px;
+        min-height: 200px;
+    }
+
+    #manageMultipleBox{
+        grid-area: manageMultipleBox;
+        background-color: white;
+        overflow: hidden;
+        padding: 25px;
+    }
+    
+    #manageMultipleBox img{
+        width: 380px;
+        height: auto;
+    }
+    
+    #manageMultipleBox p{
+        margin-top: 10px;
+        font-size: 2rem;
+        line-height: 35px;
+        font-weight: 500;
+        width: 100%;
+    }
+
+    #maintainScheduleBox{
+        grid-area: maintainScheduleBox;
+        background-color: var(--Yellow-500);
+        padding: 25px;
+        overflow: hidden;
+    }
+    
+    #maintainScheduleBox p{
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 32px;
+        margin-bottom: -50px;
+    }
+    
+    #maintainScheduleBox img{
+        position: relative;
+        top: 70px;
+        width: 240px;
+        align-self: start;
+        height: auto;
+    }
+
+    #createScheduleBox{
+        grid-area: createScheduleBox;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        background-color: var(--Purple-100);
+        overflow: hidden;
+    }
+    
+    #createScheduleBox p:first-of-type{
+        font-size: 1.8rem;
+        line-height: 32px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        align-self: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #createScheduleBox img{
+        position: static;
+        height: auto;
+        max-width: 80%;
+        width: auto;
+    }
+    
+    #createScheduleBox p:nth-of-type(2){
+        margin-top: 20px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    #growFollowersBox{
+        grid-area: growFollowersBox;
+        background-color: var(--Purple-500);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    #growFollowersBox img{
+        height: 210px;
+    }
+    
+    #growFollowersBox p{
+        color: white;
+        font-size: 2rem;
+        line-height: 40px;
+        font-weight: 500;
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+        width: 80%;
+    }
+
+    #fasterGrowthBox{
+        grid-area: fasterGrowthBox;
+        background-color: white;
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #fasterGrowthBox span{
+        font-size: 4rem;
+        display: block;
+    }
+    
+    #fasterGrowthBox p{
+        align-self: flex-start;
+        font-size: 1.2rem
+    }
+    
+    #fasterGrowthBox img{
+        margin-top: 20px;
+        align-self: flex-start;
+        width: 200px;
+        height: auto;
+    }
+
+    #scheduleQuickerBox{
+        grid-area: scheduleQuickerBox;
+        background-color: var(--Yellow-100);
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 40px;
+    }
+    
+    #scheduleQuickerBox p{
+        font-size: 2.7rem;
+        width: auto;
+        line-height: 42px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    
+    #scheduleQuickerBox img{
+        width: 210px;
+    }
+    
+    #scheduleQuickerBox p span{
+        font-family: 'DM Sans Italic';
+        color: var(--Purple-500)
+    }
+
+    .lineBreak{
+        display: none;
+    }
+
+}
