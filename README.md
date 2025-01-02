@@ -28,7 +28,9 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: ["Live Site URL"](https://wlyreese.github.io/)
+
+*THIS SITE IS UPDATED REGULARLY AS I UPDATE IT WITH NEW PROJECTS SO IT MAY NOT BE THIS CURRENT PROJECT WHEN YOU READ THIS.
 
 ## My process
 
@@ -54,5 +56,5 @@ Keeping my code clean and not copying code in media queries, managing code acros
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/wlyreese)
-- Github - [@yourusername](https://github.com/wlyreese)
+- Frontend Mentor - [@wlyreese](https://www.frontendmentor.io/profile/wlyreese)
+- Github - [@wlyreese](https://github.com/wlyreese)
